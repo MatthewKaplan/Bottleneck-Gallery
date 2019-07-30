@@ -1,6 +1,9 @@
 .DS_Store
 node_modules
 /dist
+src/components/AddTodo.vue
+src/components/ToDos.vue
+src/components/TodoItem.vue
 
 # local env files
 .env.local

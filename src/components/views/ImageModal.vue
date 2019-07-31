@@ -104,11 +104,6 @@ export default {
   width: 350px;
 }
 
-.modal-default-button {
-  float: right;
-  cursor: pointer;
-}
-
 .modal-enter {
   opacity: 0;
 }

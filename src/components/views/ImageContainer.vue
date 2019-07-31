@@ -12,7 +12,7 @@
         <img
           class="nav-icon"
           src="https://i.imgur.com/P7L54S6.png"
-          alt="folder with plus sign on it."
+          alt="Return icon."
         />
       </h2>
     </div>
@@ -86,7 +86,6 @@ export default {
   right: 0px;
   transition: 0.8s ease;
   box-shadow: 4px 5px 10px #000;
-  cursor: pointer;
   top: 96px;
 }
 

@@ -2,24 +2,27 @@
   <div class="modal-mask">
     <div class="modal-wrapper" v-bind:key="image.id" v-for="image in currentImage">
       <div class="modal-container">
-        <div class="modal-body">
+        <div class="modal-info">
           <div>
             <img class="modal-image" v-bind:src="image.primaryimageurl" />
           </div>
           <div class="modal-content">
+            <button class="modal-default-button" @click="$emit('close-modal')">Close</button>
             <div class="modal-header">
+              <p class="modal-label">Title</p>
               <slot name="header">{{image.title}}</slot>
             </div>
-
             <div class="modal-body">
-              <slot name="body">{{image.dated}}</slot>
+              <p class="modal-label">Century</p>
+              <slot name="body">{{image.dated}} / {{image.century}}</slot>
             </div>
-
-            <div class="modal-footer">
-              <slot name="footer">
-                default footer
-                <button class="modal-default-button" @click="$emit('close-modal')">OK</button>
-              </slot>
+            <div class="modal-body">
+              <p class="modal-label">Culture</p>
+              <slot name="body">{{image.culture}}</slot>
+            </div>
+              <p class="modal-label">Description</p>
+            <div class="modal-description">
+              <slot name="body">{{image.labeltext}}</slot>
             </div>
           </div>
         </div>
@@ -48,9 +51,27 @@ export default {
   transition: opacity 0.3s ease;
 }
 
+.modal-label {
+  color: #999;
+}
+
+.modal-description {
+  max-height: 150px;
+  overflow: scroll;
+}
+
 .modal-wrapper {
   display: table-cell;
   vertical-align: middle;
+}
+
+.modal-info {
+  display: flex;
+}
+
+.modal-content {
+  padding: 20px;
+  min-width: 415px;
 }
 
 .modal-container {
@@ -74,8 +95,8 @@ export default {
 }
 
 .modal-image {
-  height: 300px;
-  width: 300px;
+  height: 400px;
+  width: 350px;
 }
 
 .modal-default-button {

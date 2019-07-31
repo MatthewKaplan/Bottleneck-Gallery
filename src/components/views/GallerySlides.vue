@@ -1,13 +1,13 @@
 <template>
   <div class="gallery-slides">
-    <div v-bind:key="gallery.id" v-for="gallery in galleries.galleryArray" @mouseover="isHovering = true" @mouseout="isHovering = false">
-      <li>
+    <div @mouseover="isHovering = true" @mouseout="isHovering = false">
+      <li @click="$emit('selected-gallery', galleryInfo.id)">
         <div v-bind:class="{'not-caption':(isHovering === false), 'caption':(isHovering === true)}">
-          <a href="#">{{gallery.name}}</a>
-          <a class="gallery-theme" href="#">{{gallery.theme}}</a>
+          <a href="#">{{galleryInfo.name}}</a>
+          <a class="gallery-theme" href="#">{{galleryInfo.theme}}</a>
         </div>
         <a href="#">
-          <img v-bind:src="gallery.image" />
+          <img v-bind:src="galleryInfo.image" />
         </a>
       </li>
     </div>
@@ -15,19 +15,13 @@
 </template>
 
 <script>
-import galleryArray from "../../helper/data";
-
 export default {
   name: "GallerySlides",
   props: ["galleryInfo"],
   data() {
     return {
-      galleries: [],
       isHovering: false
     };
-  },
-  created() {
-    this.galleries = galleryArray;
   }
 };
 </script>

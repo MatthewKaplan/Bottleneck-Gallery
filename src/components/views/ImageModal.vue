@@ -7,7 +7,12 @@
             <img class="modal-image" v-bind:src="image.primaryimageurl" />
           </div>
           <div class="modal-content">
-            <button class="modal-default-button" @click="$emit('close-modal')">Close</button>
+            <img
+              class="close-icon"
+              src="https://i.imgur.com/iSC7dNW.png"
+              alt="folder with plus sign on it."
+              @click="$emit('close-modal')"
+            />
             <div class="modal-header">
               <p class="modal-label">Title</p>
               <slot name="header">{{image.title}}</slot>
@@ -20,7 +25,7 @@
               <p class="modal-label">Culture</p>
               <slot name="body">{{image.culture}}</slot>
             </div>
-              <p class="modal-label">Description</p>
+            <p class="modal-label">Description</p>
             <div class="modal-description">
               <slot name="body">{{image.labeltext}}</slot>
             </div>
@@ -101,6 +106,7 @@ export default {
 
 .modal-default-button {
   float: right;
+  cursor: pointer;
 }
 
 .modal-enter {
@@ -115,5 +121,13 @@ export default {
 .modal-leave-active .modal-container {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
+}
+
+.close-icon {
+  height: 10%;
+  width: 10%;
+  float: right;
+  cursor: pointer;
+  padding-bottom: 10px;
 }
 </style>

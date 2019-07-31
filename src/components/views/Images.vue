@@ -112,7 +112,7 @@ img {
 }
 
 .btn-area {
-  background-color: #10b0ee;
+  background-color: #ddddcc;
   width: 300px;
   height: 60px;
   border-radius: 30px;
@@ -157,9 +157,10 @@ h2 {
   text-align: center;
   left: 5px;
   font-size: 20px;
+  color: #fff;
 }
 
 #nav1 {
-  top: 100px;
+  top: 125px;
 }
 </style>

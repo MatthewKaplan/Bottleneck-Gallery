@@ -1,9 +1,22 @@
 <template>
   <div id="app">
     <Header />
-    <Gallery v-bind:galleryInfo="galleryInfo" v-on:selected-gallery="selectedGallery"/>
-    <Images v-on:selected-image="selectedImage" v-if="gallerySelected" v-bind:galleryId="selectedGalleryId" />
-    <ImageModal v-bind:currentImage="currentImage" v-if="noSelectedImages" v-on:close-modal="closeModal"/>
+    <Gallery
+      v-bind:class="{'slideshow-on':(selectedGalleryId === ''), 'slideshow-off':(selectedGalleryId !== '')}"
+      v-bind:galleryInfo="galleryInfo"
+      v-on:selected-gallery="selectedGallery"
+    />
+    <Images
+      v-on:selected-image="selectedImage"
+      v-on:return-btn="openGallerySlides"
+      v-if="gallerySelected"
+      v-bind:galleryId="selectedGalleryId"
+    />
+    <ImageModal
+      v-bind:currentImage="currentImage"
+      v-if="noSelectedImages"
+      v-on:close-modal="closeModal"
+    />
   </div>
 </template>
 
@@ -26,28 +39,30 @@ export default {
   data() {
     return {
       currentImage: [],
-      selectedGalleryId: '',
+      selectedGalleryId: "",
       galleryInfo: []
     };
   },
   methods: {
     selectedImage(image) {
       this.currentImage = [image];
-      console.log(this.currentImage)
     },
     closeModal() {
-      this.currentImage = []
+      this.currentImage = [];
     },
     selectedGallery(id) {
       this.selectedGalleryId = id;
+    },
+    openGallerySlides() {
+      this.selectedGalleryId = "";
     }
   },
   computed: {
     noSelectedImages() {
-      return this.currentImage.length >= 1
+      return this.currentImage.length >= 1;
     },
     gallerySelected() {
-      return this.selectedGalleryId !== ''
+      return this.selectedGalleryId !== "";
     }
   },
   created() {
@@ -84,5 +99,15 @@ body {
 
 .btn:hover {
   background: #666;
+}
+
+.slideshow-on {
+  height: 89vh;
+  transition: all 1.5s ease 1.5ms;
+}
+
+.slideshow-off {
+  height: 0vh;
+  transition: all 1.5s ease 1.5ms;
 }
 </style>

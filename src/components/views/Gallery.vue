@@ -1,7 +1,7 @@
 <template>
   <div class="accordion">
-    <ul>
-      <GallerySlides v-bind:galleryInfo="galleryInfo"/>
+    <ul v-bind:key="galleryInfo.id" v-for="galleryInfo in galleryInfo.galleryArray">
+      <GallerySlides v-bind:galleryInfo="galleryInfo" v-on:selected-gallery="$emit('selected-gallery', galleryInfo.id)"/>
     </ul>
   </div>
 </template>
@@ -12,27 +12,10 @@ import GallerySlides from "./GallerySlides";
 
 export default {
   name: "Gallery",
-  data() {
-    return {
-      galleryInfo: []
-    };
-  },
   components: {
     GallerySlides
   },
-  created() {
-    axios
-      .get(
-        `https://api.harvardartmuseums.org/gallery?apikey=a6ce4310-b23f-11e9-8eb6-bf28e6d552d3&size=64`
-      )
-      .then(
-        results =>
-          (this.galleryInfo = results.data.records.filter(
-            gallery => gallery.objectcount > 25 && gallery.theme !== null
-          ))
-      )
-      .catch(error => console.log(error));
-  }
+  props: ["galleryInfo"]
 };
 </script>
 

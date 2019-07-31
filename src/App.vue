@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Header />
+    <Gallery />
     <Images v-on:selected-image="selectedImage" />
     <ImageModal v-bind:currentImage="currentImage" v-if="noSelectedImages" v-on:close-modal="closeModal"/>
   </div>
@@ -10,6 +11,7 @@
 import Header from "./components/views/Header";
 import Images from "./components/views/Images";
 import ImageModal from "./components/views/ImageModal";
+import Gallery from "./components/views/Gallery";
 import axios from "axios";
 
 export default {
@@ -17,7 +19,8 @@ export default {
   components: {
     Header,
     Images,
-    ImageModal
+    ImageModal,
+    Gallery
   },
   data() {
     return {

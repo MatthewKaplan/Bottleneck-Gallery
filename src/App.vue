@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <Header />
-    <Images v-on:selected-image="selectedImage" />
+    <Gallery v-bind:galleryInfo="galleryInfo" v-on:selected-gallery="selectedGallery"/>
+    <Images v-on:selected-image="selectedImage" v-if="gallerySelected" v-bind:galleryId="selectedGalleryId" />
     <ImageModal v-bind:currentImage="currentImage" v-if="noSelectedImages" v-on:close-modal="closeModal"/>
   </div>
 </template>
@@ -10,6 +11,8 @@
 import Header from "./components/views/Header";
 import Images from "./components/views/Images";
 import ImageModal from "./components/views/ImageModal";
+import Gallery from "./components/views/Gallery";
+import galleryArray from "./helper/data";
 import axios from "axios";
 
 export default {
@@ -17,11 +20,14 @@ export default {
   components: {
     Header,
     Images,
-    ImageModal
+    ImageModal,
+    Gallery
   },
   data() {
     return {
-      currentImage: []
+      currentImage: [],
+      selectedGalleryId: '',
+      galleryInfo: []
     };
   },
   methods: {
@@ -31,12 +37,21 @@ export default {
     },
     closeModal() {
       this.currentImage = []
+    },
+    selectedGallery(id) {
+      this.selectedGalleryId = id;
     }
   },
   computed: {
     noSelectedImages() {
       return this.currentImage.length >= 1
+    },
+    gallerySelected() {
+      return this.selectedGalleryId !== ''
     }
+  },
+  created() {
+    this.galleryInfo = galleryArray;
   }
 };
 </script>

@@ -118,6 +118,10 @@ const galleryArray = [
     theme: "Buddhism and Early East Asian Buddhist Art",
     id: 1610,
     image: "https://nrs.harvard.edu/urn-3:HUAM:30679_dynmc"
+  },
+  {
+    id: "",
+    image: "https://i.imgur.com/hnKfDWW.png"
   }
 ]
 

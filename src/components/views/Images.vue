@@ -1,5 +1,9 @@
 <template>
   <div class="images">
+    <loading
+      :active.sync="this.isLoading"
+      :is-full-page="true"
+    ></loading>
     <div class="btn-area" id="nav1" @click="$emit('return-btn')">
       <h2>
         <img
@@ -20,6 +24,8 @@
 
 <script>
 import axios from "axios";
+import Loading from "vue-loading-overlay";
+import "vue-loading-overlay/dist/vue-loading.css";
 
 export default {
   name: "Images",
@@ -27,10 +33,15 @@ export default {
   data() {
     return {
       images: [],
-      currentImage: {}
+      currentImage: {},
+      isLoading: false
     };
   },
+  components: {
+    Loading
+  },
   created() {
+    this.isLoading = true;
     axios
       .get(
         `https://api.harvardartmuseums.org/object?apikey=a6ce4310-b23f-11e9-8eb6-bf28e6d552d3&gallery=${this.galleryId}&size=100`
@@ -41,6 +52,7 @@ export default {
             img => img.primaryimageurl
           ))
       )
+      .then(this.isLoading = false)
       .catch(error => console.log(error));
   }
 };
@@ -100,7 +112,7 @@ img {
 }
 
 .btn-area {
-  background-color: #10b0ee;
+  background-color: #ddddcc;
   width: 300px;
   height: 60px;
   border-radius: 30px;
@@ -145,9 +157,10 @@ h2 {
   text-align: center;
   left: 5px;
   font-size: 20px;
+  color: #fff;
 }
 
 #nav1 {
-  top: 100px;
+  top: 125px;
 }
 </style>

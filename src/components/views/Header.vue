@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <h1>Bottleneck Gallery</h1>
+    <h1 @click="$emit('return-btn')">Bottleneck Gallery</h1>
     <img class="logo" src="../../assets/BNG-logo.png">
   </header>
 </template>
@@ -26,6 +26,7 @@ export default {
     color: #000;
     font-size: 45px;
     align-self: flex-end;
+    cursor: pointer;
   }
 
   .logo {

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header />
+    <Header v-on:return-btn="openGallerySlides"/>
     <Gallery
       v-bind:class="{'slideshow-on':(selectedGalleryId === ''), 'slideshow-off':(selectedGalleryId !== '')}"
       v-bind:galleryInfo="galleryInfo"

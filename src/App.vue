@@ -1,15 +1,16 @@
 <template>
   <div id="app">
-    <Header v-on:return-btn="openGallerySlides"/>
+    <Header v-on:return-btn="openGallerySlides" />
     <Gallery
       v-bind:class="{'slideshow-on':(selectedGalleryId === ''), 'slideshow-off':(selectedGalleryId !== '')}"
       v-bind:galleryInfo="galleryInfo"
       v-on:selected-gallery="selectedGallery"
     />
-    <Images
+    <ImageContainer
       v-on:selected-image="selectedImage"
       v-on:return-btn="openGallerySlides"
       v-if="gallerySelected"
+      v-bind:galleryInfo="galleryInfo"
       v-bind:galleryId="selectedGalleryId"
     />
     <ImageModal
@@ -25,6 +26,7 @@ import Header from "./components/views/Header";
 import Images from "./components/views/Images";
 import ImageModal from "./components/views/ImageModal";
 import Gallery from "./components/views/Gallery";
+import ImageContainer from "./components/views/ImageContainer";
 import galleryArray from "./helper/data";
 import axios from "axios";
 
@@ -34,7 +36,8 @@ export default {
     Header,
     Images,
     ImageModal,
-    Gallery
+    Gallery,
+    ImageContainer
   },
   data() {
     return {

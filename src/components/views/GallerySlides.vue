@@ -3,6 +3,7 @@
     <div @mouseover="isHovering = true" @mouseout="isHovering = false">
       <li @click="$emit('selected-gallery', galleryInfo.id)">
         <div v-bind:class="{'not-caption':(isHovering === false), 'caption':(isHovering === true)}">
+        <!-- <div class="caption"> -->
           <a href="#">{{galleryInfo.name}}</a>
           <a class="gallery-theme" href="#">{{galleryInfo.theme}}</a>
         </div>
@@ -28,7 +29,7 @@ export default {
 
 <style>
 img {
-  height: 87vh;
+  height: 89vh;
   width: 800px;
 }
 .gallery-slides {
@@ -39,13 +40,13 @@ img {
   background: rgba(0, 0, 0, 0.7);
   position: absolute;
   bottom: 0px;
-  left: 100vw;
   width: 640px;
   transition: all 0.5s ease 0.5ms;
+  height: 0px;
 }
 
 .not-caption a {
-  display: block;
+  display: inline;
   color: #fff;
   text-decoration: none;
   font: normal 16px "Lato", Helvetica, Arial, sans-serif;

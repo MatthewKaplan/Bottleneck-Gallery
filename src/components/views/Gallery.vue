@@ -22,10 +22,10 @@ export default {
 <style>
 .accordion {
   width: 100vw;
-  height: 87vh;
+  height: 88vh;
   overflow: hidden;
   box-shadow: 0 10px 6px -6px #111;
-  margin: 0px auto;
+  margin: 0px 0px;
 }
 .accordion ul {
   width: 200%;
@@ -34,7 +34,7 @@ export default {
 .accordion li {
   position: relative;
   display: block;
-  width: 60px;
+  width: 42px;
   float: left;
   box-shadow: 0 0 30px 8px #222;
   transition: all 0.8s ease 0.5ms;
@@ -52,9 +52,9 @@ export default {
   position: absolute;
   bottom: 0;
   width: 640px;
-  left: 5vw;
   transition: all 0.5s ease 0.5ms;
   text-align: center;
+  height: 120px;
 }
 
 .caption a {

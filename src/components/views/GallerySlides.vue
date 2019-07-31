@@ -3,7 +3,6 @@
     <div @mouseover="isHovering = true" @mouseout="isHovering = false">
       <li @click="$emit('selected-gallery', galleryInfo.id)">
         <div v-bind:class="{'not-caption':(isHovering === false), 'caption':(isHovering === true)}">
-        <!-- <div class="caption"> -->
           <a href="#">{{galleryInfo.name}}</a>
           <a class="gallery-theme" href="#">{{galleryInfo.theme}}</a>
         </div>

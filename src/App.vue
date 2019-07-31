@@ -2,8 +2,8 @@
   <div id="app">
     <Header />
     <Gallery />
-    <Images v-on:selected-image="selectedImage" />
-    <ImageModal v-bind:currentImage="currentImage" v-if="noSelectedImages" v-on:close-modal="closeModal"/>
+    <!-- <Images v-on:selected-image="selectedImage" />
+    <ImageModal v-bind:currentImage="currentImage" v-if="noSelectedImages" v-on:close-modal="closeModal"/> -->
   </div>
 </template>
 

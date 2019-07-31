@@ -26,7 +26,7 @@ export default {
   },
   created() {
     axios.get(
-      `https://api.harvardartmuseums.org/object?apikey=a6ce4310-b23f-11e9-8eb6-bf28e6d552d3&gallery=2540&size=100`
+      `https://api.harvardartmuseums.org/object?apikey=a6ce4310-b23f-11e9-8eb6-bf28e6d552d3&gallery=1610&size=100`
     )
       .then(results => (this.images = results.data.records.filter(img => img.primaryimageurl)))
       .catch(error => console.log(error));

@@ -23,18 +23,15 @@
 
 <script>
 import Header from "./components/views/Header";
-import Images from "./components/views/Images";
 import ImageModal from "./components/views/ImageModal";
 import Gallery from "./components/views/Gallery";
 import ImageContainer from "./components/views/ImageContainer";
 import galleryArray from "./helper/data";
-import axios from "axios";
 
 export default {
   name: "app",
   components: {
     Header,
-    Images,
     ImageModal,
     Gallery,
     ImageContainer

@@ -1,13 +1,15 @@
 <template>
   <div class="accordion">
     <ul v-bind:key="galleryInfo.id" v-for="galleryInfo in galleryInfo.galleryArray">
-      <GallerySlides v-bind:galleryInfo="galleryInfo" v-on:selected-gallery="$emit('selected-gallery', galleryInfo.id)"/>
+      <GallerySlides
+        v-bind:galleryInfo="galleryInfo"
+        v-on:selected-gallery="$emit('selected-gallery', galleryInfo.id)"
+      />
     </ul>
   </div>
 </template>
 
 <script>
-import axios from "axios";
 import GallerySlides from "./GallerySlides";
 
 export default {

@@ -34,6 +34,17 @@ export default {
   width: 10%;
   cursor: pointer;
 }
+
+@media screen and (max-width: 500px) {
+  .header h1 {
+    font-size: 28px;
+  }
+
+  .logo {
+    height: 65px;
+    width: 16%;
+  }
+}
 </style>
 
 

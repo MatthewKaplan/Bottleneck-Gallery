@@ -41,6 +41,7 @@ img {
   bottom: 0px;
   width: 640px;
   transition: all 0.5s ease 0.5ms;
+  text-align: center;
   height: 0px;
 }
 
@@ -55,5 +56,30 @@ img {
 
 .gallery-theme {
   margin-bottom: 20px;
+}
+
+@media screen and (max-width: 500px) {
+  img {
+    height: 29vh;
+    width: 207px;
+  }
+
+  .not-caption {
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    bottom: 0;
+    width: 207px;
+    transition: all 0.5s ease 0.5ms;
+    text-align: center;
+    height: 60px;
+  }
+
+  .not-caption a {
+    padding: 0px;
+  }
+
+  .not-caption .gallery-theme {
+    display: none;
+  }
 }
 </style>

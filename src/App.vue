@@ -110,4 +110,8 @@ body {
   height: 0vh;
   transition: all 1.5s ease 1.5ms;
 }
+
+@media screen and (max-width: 500px) {
+
+}
 </style>

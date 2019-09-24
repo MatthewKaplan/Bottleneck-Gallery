@@ -67,4 +67,43 @@ export default {
   -webkit-font-smoothing: antialiased;
   padding: 15px;
 }
+
+@media screen and (max-width: 500px) {
+  .accordion {
+    overflow: visible;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    grid-row-gap: 20px;
+    margin-top: 30px;
+  }
+  .accordion ul {
+    width: 90%;
+  }
+  .accordion li {
+    float: none;
+  }
+  .accordion ul li:hover {
+    width: 207px;
+  }
+  .caption {
+    width: 207px;
+    height: 60px;
+  }
+
+  .caption a {
+    padding: 0px;
+  }
+
+  .accordion ul:hover li {
+    width: 42px;
+  }
+
+  .caption .gallery-theme {
+    display: none;
+  }
+  .accordion ul:nth-child(21) {
+    display: none;
+  }
+}
 </style>

@@ -1,15 +1,12 @@
 # Bottleneck Gallery
 
-Bottleneck Gallery is my final project for the Turing School of Software & Design. The goal of this project was to mimic a take home project, specifically, learning a new piece of technology over a few days, in this case Vue.js. For this project I had to use the Harvard Museum API to create an online Art Gallery. 
+Bottleneck Gallery was my final project for the Turing School of Software & Design. The goal of this project was to mimic a take home project, specifically, learning a new piece of technology over just a few days, in this case Vue.js. For this project I had to use the Harvard Museum API to create an online Art Gallery. 
 
 ## Site deployed live at:
 
 [https://master.d3m3ghzidizx9s.amplifyapp.com/](https://master.d3m3ghzidizx9s.amplifyapp.com/)
 
-## Preview:
-
-![Start_Page](https://i.imgur.com/K8ixZvV.jpg)
-![Gallery_Page](https://i.imgur.com/GvFcu8v.png)
+## Preview: <img src="https://i.imgur.com/ikYask0.png" width="1000" />
 
 ## Getting Started:
 
